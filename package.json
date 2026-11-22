@@ -1,0 +1,46 @@
+{
+  "name": "dsh-line-notice",
+  "version": "0.3.1",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "description": "会话成本温度计：把输入框右侧的上下文小圆环按「本步缓存花费 ÷ 新窗口首轮花费」染色——0 灰、越接近 1 越红、跨 1/2/3 档闪 1/2/3 次。读 meow-cachebilling 的投影，零 token。",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cost",
+    "billing",
+    "cache-hit",
+    "context-ring"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "meow-cachebilling": ">=0.8.0"
+  },
+  "peerDependenciesMeta": {
+    "meow-cachebilling": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  }
+}
